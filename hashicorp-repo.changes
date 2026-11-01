@@ -1,0 +1,14 @@
+-------------------------------------------------------------------
+Sun Nov  1 12:00:00 UTC 2026 - Lyra OS Release <rodrigo@lyraos.com.br>
+
+- Register HashiCorp's official RPM repository
+  (rpm.releases.hashicorp.com/RHEL/9/$basearch/stable), with metadata and package GPG
+  verification enabled and third-party priority 90. HashiCorp has no
+  openSUSE channel; the RHEL 9 one serves Terraform and Vagrant, which run
+  on Leap 16.1.
+- Ship HashiCorp's package signing key
+  (D55C 0D1A C78A 8D81 26CB 631C FC9C A96A CA02 6560) at
+  /usr/share/hashicorp-repo/hashicorp.asc, because the repository does not
+  publish repomd.xml.key; %check pins the fingerprint.
+- Ship no HashiCorp binary: Terraform and Vagrant are installed, updated and
+  signed by HashiCorp.
